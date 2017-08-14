@@ -60,7 +60,8 @@ public class DistFilter {
   public static void main(String[] argv) 
     throws Exception
   {
-    String prog = System.getProperty("argv0", "FilterMain");
+    String prog = System.getProperty("argv0", "DistFilter");
+      // String prog = System.getProperty("argv0", "FilterMain");
     Commandline cmd = new Commandline
       (prog,
        "use a distributed pipe to filter stdin to stdout",

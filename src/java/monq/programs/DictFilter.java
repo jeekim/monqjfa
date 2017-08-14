@@ -599,12 +599,14 @@ public class DictFilter implements ServiceFactory {
     cmd.addOption(new BooleanOption("-v", "write all generated regular "+
 				    "expressions to standard error or the "+
 				    "logfile"));
+      String[] dflt0 = {"raw"};
     cmd.addOption(new EnumOption
 		  ("-t", "type", 
 		   "type of input: raw=plain ascii, xml=recognize and "+
 		   "skip xml tags, elem=tag only within xml element given "+
 		   "with option -e",
-		   1, 1, "|raw|xml|elem", null).required());
+		   1, 1, "|raw|xml|elem", dflt0).required());
+      // 1, 1, "|raw|xml|elem", null).required());
     String[] dflt = {"plain"};
     cmd.addOption(new Option
 		  ("-e", "elem",
@@ -615,7 +617,8 @@ public class DictFilter implements ServiceFactory {
 		  ("-p", "port", 
 		   "run as a server on given port instead of filtering "+
 		   "stdin->stdout",
-		   1, 1, 0, 65535, null));
+		   1, 1, 0, 65535));
+      // 1, 1, 0, 65535, null));
     cmd.addOption(new Option
 		  ("-c", "fname",
 		   "store the compiled DFA in file fname and exit",
