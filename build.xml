@@ -7,8 +7,12 @@
   <import file="../hkAntLib/javac.xml"/>
   <import file="../hkAntLib/cobertura.xml"/>
   <import file="../hkAntLib/junit.xml"/>
-  <taskdef resource="net/sf/antcontrib/antlib.xml"/>
-  
+  <taskdef resource="net/sf/antcontrib/antlib.xml">
+      <classpath>
+         <pathelement location="/home/jee/Downloads/ant-contrib/ant-contrib-1.0b3.jar"/>
+      </classpath>
+  </taskdef>
+
   <do-assert-var-set var="junit.jar"
                      text="Must be the full path of junit4.jar"/>
 
